@@ -1,4 +1,4 @@
-define(["jquery","../js/api.js","../lib/slideSelect"],function($,api){
+define(["jquery","../js/api","../lib/slideSelect"],function($,api){
     if(window.location.href.indexOf("choose.html")==-1) return;
     //显示影藏
     var ls=window.localStorage;

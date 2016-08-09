@@ -1,4 +1,5 @@
-define(["../lib/valiId","../js/api","../lib/common",'../js/dialog'],function(ID,api,common,dialog){
+define(["valiId","../js/api","../lib/common",'../js/dialog'],function(ID,api,common,dialog){
+	     
 	if(window.location.href.indexOf('login.html') == -1) return;
 	var Id=$(".id"),Code=$(".Code"),regbtn=$(".code");
 	var valId=$.trim(Id.val()),valCode=$.trim(Code.val());

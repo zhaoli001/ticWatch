@@ -12,20 +12,20 @@
     <!--禁止自动识别邮箱-->
     <meta name='format-detection' content='email=no'>
     <title>订单详情</title>
-    <link rel="stylesheet" href="../cssmin/style.css">
+    <link rel="stylesheet" href="../build/order.css">
 </head>
 <body>
 	<div class="container pad-top">
 		<div class="wrapper order">
 			<ul class='order-list clear'>
 				<li><span class="left">订单号</span><span class="right">201602456344</span></li>
-				<li><span class="left">申请时间</span><span class="right">2016/05/12/ 10:23:01</span></li>
-				<li><span class="left">号码</span><span class="right gray">150 3023 4663</span></li>
-				<li><span class="left">套餐</span><span class="right gray">0元套餐</span></li>
+				<li><span class="left">申请时间</span><span class="right or-time">2016/05/12/ 10:23:01</span></li>
+				<li><span class="left">号码</span><span class="right gray or-phone">150 3023 4663</span></li>
+				<li><span class="left">套餐</span><span class="right gray or-meal">0元套餐</span></li>
 				<li><span class="left">赠100M流量</span><span class="right gray">6个月内有效</span></li>
-				<li><span class="left">来电显示</span><span class="right gray">暂不需要</span></li>
-				<li class='border'><span class="left">预存金额</span><span class="right gray">30元</span></li>
-				<li><span class="left">共需支付</span><span class="right gray">30元</span></li>
+				<li><span class="left">来电显示</span><span class="right gray or-showNum">暂不需要</span></li>
+				<li class='border'><span class="left">预存金额</span><span class="right gray or-price">30元</span></li>
+				<li><span class="left">共需支付</span><span class="right gray all">30元</span></li>
 			</ul>
 			<div class="btn pay-btn">立即支付</div>
 		</div>
@@ -36,3 +36,4 @@
 	</div>
 </body>
 </html>
+<script data-main="../js/main" src="../lib/require.js"></script> 

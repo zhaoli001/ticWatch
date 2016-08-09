@@ -12,7 +12,7 @@
     <!--禁止自动识别邮箱-->
     <meta name='format-detection' content='email=no'>
     <title>我的3G</title>
-    <link rel="stylesheet" href="../cssmin/style.css">
+    <link rel="stylesheet" href="../build/main.css">
 </head>
 <body>
 	<div class="container pad-top">
@@ -22,83 +22,15 @@
 			</div>
 			<div class="my-tab">
 				<div class="tab-title">
-					<span class='on'>流量查询</span>
-					<span>话费充值</span>
-					<span>当月话费</span>
-					<span>个人中心</span>
+					<span class='on' data-msg="flow">流量查询</span>
+					<span data-msg="say">话费充值</span>
+					<span data-msg="nowYear">当月话费</span>
+					<span data-msg="ower">个人中心</span>
 				</div>
 				<div class="tab-main-wrap">
 					<div class="tab-main clear">
-						<!-- 流量查询 -->
-						<section>
-							<ul class='count'>
-								<li>
-									<h4>流量</h4>
-									<p>本月已使用套餐内流量12.25MB，剩余37.75MB；问问激活专享流量已使用</p>
-								</li>
-								<li>
-									<h4>语音通话</h4>
-									<p>本月已使用套餐内语言通话23分钟，剩余7分钟</p>
-								</li>
-								<li>
-									<h4>短信</h4>
-									<p>本月已发送14条点对点短信</p>
-								</li>
-							</ul>
-							<ul class="footer-text my-text">
-								<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
-								<li>民生通讯官方电话：400-2354565</li>
-							</ul>
-						</section>
-						<!-- 话费充值 -->
-						<section class='pay'>
-							<p><input type="text" placeholder='充值手机号码'></p>
-							<h4>充值金额</h4>
-							<div class="price clear">
-								<span class='on'>50元</span>
-								<span>100元</span>
-								<span>200元</span>
-								<span>500元</span>
-							</div>
-							<div class="btn btn-dis pay-btn">立即充值</div>
-						</section>
-						<!-- 当月话费 -->
-						<section class='current'>
-							<div class="current-top">
-								<h4><span class='left'>月基本费</span><span class='right'>14.80元</span></h4>
-								<ul>
-									<li><span class='left'>基本月租</span><span class='right'>9.9元</span></li>
-									<li><span class='left'>基本月租</span><span class='right'>9.9元</span></li>
-								</ul>
-								<h4><span class='left'>增值业务</span><span class='right'>14.80元</span></h4>
-								<ul>
-									<li><span class='left'>点对点短信</span><span class='right'>9.9元</span></li>
-									<li><span class='left'>基本月租</span><span class='right'>9.9元</span></li>
-								</ul>
-								<h4><span class='left'>语音通话</span><span class='right'>14.80元</span></h4>
-								<h2><span class='left'>合计缴费</span><span class='right'>21.65元</span></h2>
-								<p class='tap'>特别提醒：如果您欠费后90天内未充值，您的号码将作销号处理</p>
-							</div>
-							<ul class="footer-text my-text">
-								<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
-								<li>民生通讯官方电话：400-2354565</li>
-							</ul>
-						</section>
-						<section class='my-home'>
-							<div class='my-menu'>
-								<h4>我的套餐</h4>
-								<p>0元月租套餐</p>
-								<ul>
-									<li>0元月租</li>
-									<li>主叫1.15分钟</li>
-									<li>0元月租</li>
-								</ul>
-							</div>
-							<div class="pos-btn exit-btn"><span class="btn">退出登录</span></div>
-							<ul class="footer-text my-text">
-								<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
-								<li>民生通讯官方电话：400-2354565</li>
-							</ul>
+						<section class="my-content">
+							
 						</section>
 					</div>
 				</div>
@@ -107,3 +39,65 @@
 	</div>
 </body>
 </html>
+<script type="text/html" id="flow">
+
+	<!-- <ul class='count'>
+		<% for(var i=0;i<list.length;i++) {%>
+			<li><h4><%= list[i].name %></h4>
+			<p><%= list[i].info %></p></li>
+		<% } %>
+	</ul> -->
+	<ul class="footer-text my-text">
+		<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
+		<li>民生通讯官方电话：400-2354565</li>
+	</ul>
+</script>
+<script type="text/html" id="say">
+	<p><input type="text" placeholder='充值手机号码' class="recharge"></p>
+	<h4>充值金额</h4>
+	<div class="price clear">
+		<span class='Mprice on'>50元</span>
+		<span class='Mprice'>100元</span>
+		<span class='Mprice'>200元</span>
+		<span class='Mprice'>500元</span>
+	</div>
+	<div class="btn btn-dis pay-btn">立即充值</div>
+</script>
+<script type="text/html" id="nowYear">
+	<div class="current-top">
+		<h4><span class='left'>月基本费</span><span class='right'>14.80元</span></h4>
+		<ul>
+			<li><span class='left'>基本月租</span><span class='right'>9.9元</span></li>
+			<li><span class='left'>基本月租</span><span class='right'>9.9元</span></li>
+		</ul>
+		<h4><span class='left'>增值业务</span><span class='right'>14.80元</span></h4>
+		<ul>
+			<li><span class='left'>点对点短信</span><span class='right'>9.9元</span></li>
+			<li><span class='left'>基本月租</span><span class='right'>9.9元</span></li>
+		</ul>
+		<h4><span class='left'>语音通话</span><span class='right'>14.80元</span></h4>
+		<h2><span class='left'>合计缴费</span><span class='right'>21.65元</span></h2>
+		<p class='tap'>特别提醒：如果您欠费后90天内未充值，您的号码将作销号处理</p>
+	</div>
+	<ul class="footer-text my-text">
+		<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
+		<li>民生通讯官方电话：400-2354565</li>
+	</ul>
+</script>
+<script type="text/html" id="ower">
+	<div class='my-menu'>
+		<h4>我的套餐</h4>
+		<p>0元月租套餐</p>
+		<ul>
+			<li>0元月租</li>
+			<li>主叫1.15分钟</li>
+			<li>0元月租</li>
+		</ul>
+	</div>
+	<div class="pos-btn exit-btn"><span class="btn">退出登录</span></div>
+	<ul class="footer-text my-text">
+		<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
+		<li>民生通讯官方电话：400-2354565</li>
+	</ul>
+</script>
+ <script data-main="../js/main" src="../lib/require.js"></script> 

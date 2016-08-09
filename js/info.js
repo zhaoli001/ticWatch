@@ -1,4 +1,4 @@
-define(["jquery","../lib/common","../js/dialog","../lib/valiId"],function($,common,dialog,ID){
+define(["jquery","../lib/common","../js/dialog","valiId","../lib/common"],function($,common,dialog,ID,common){
     if(window.location.href.indexOf("info.html")==-1) return;
     //获取地址栏的参数
     var ICCID=decodeURI(common.getUrlParams("ICCID")),
@@ -6,7 +6,8 @@ define(["jquery","../lib/common","../js/dialog","../lib/valiId"],function($,comm
             return b+" "+c+" "+d;
         }),
         price=decodeURI(common.getUrlParams("price"))+"预存",
-        meal=decodeURI(common.getUrlParams("meal"))=="q1" ? "0元月租" : "100元月租"
+        meal=decodeURI(common.getUrlParams("meal"))=="q1" ? "0元月租" : "100元月租",
+        showNum=decodeURI(common.getUrlParams("showNum"))=="k1" ? "开通5元/月" : "暂不需要"
         $(".info-span").text(price+"/"+meal+"/"+number);
 
     var Dialog=new dialog();
@@ -121,10 +122,31 @@ define(["jquery","../lib/common","../js/dialog","../lib/valiId"],function($,comm
             })
         })
 
+
+
+
         $('.next-btn').on("click",function(){
-            window.location.href="";
+            window.location.href="order.html";
+            local();
         })
-
-
+    var arr=[];
+    var ls=window.localStorage;
+        function local(){
+           var name=$(".up-name").val(),
+                Id=$(".up-id").val(),
+                area=$(".up-area").val(),
+                phone=$(".up-phone").val();
+            arr.push({
+                name:name,
+                id:Id,
+                area:area,
+                phone:phone,
+                price:price,
+                meal:meal,
+                showNum:showNum,
+                time:common.getNowtime()
+            })
+            ls.setItem("name",JSON.stringify(arr));
+        }
 
 })
